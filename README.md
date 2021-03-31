@@ -13,3 +13,7 @@ Various utils for nodejs.
 ###### Take the express req object and extract the params.
 ## SendMail.js
 ###### SMTP port 25 client. 
+## Trace.js
+###### Simple logging library for db enabled tracing. 
+## Socket.js
+###### TCP connect, send, recv socket library.  

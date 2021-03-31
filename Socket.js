@@ -15,14 +15,14 @@
 
 			const client = socket_data['client'];
 			const banner = socket_data['banner'];
-			const cmd	= Buffer.from( sending_data ).toString( 'base64' );
+			const cmd    = Buffer.from( sending_data ).toString( 'base64' );
 
 			const result = await Socket.send( { data: cmd, client: client, end: end } );
 		}
 
 */
 
-const net	   = require('net');
+const net       = require('net');
 const classname = 'Socket';
 const time_sec  = 5000;
 
@@ -87,9 +87,9 @@ exports.Socket = class {
 
 		args = args || [];
 
-		let end	 = args['end'];
-		let data	= args['data'];
-		let client  = args['client'];
+		let end    = args['end'];
+		let data   = args['data'];
+		let client = args['client'];
 
 		var self = this;
 
