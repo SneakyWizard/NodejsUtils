@@ -15,14 +15,14 @@
 
 			const client = socket_data['client'];
 			const banner = socket_data['banner'];
-			const cmd    = Buffer.from( sending_data ).toString( 'base64' );
+			const cmd	= Buffer.from( sending_data ).toString( 'base64' );
 
 			const result = await Socket.send( { data: cmd, client: client, end: end } );
 		}
 
 */
 
-const net       = require('net');
+const net	   = require('net');
 const classname = 'Socket';
 const time_sec  = 5000;
 
@@ -54,12 +54,12 @@ exports.Socket = class {
 					rej( error );
 				}, time_sec );
 
-            } ).on( 'close', function( data ) {
+			} ).on( 'close', function( data ) {
 
 				let error = `${classname} closed ${host}:${port}`;
 				rej( error );
 
-            } ).on( 'data', function( data ) {
+			} ).on( 'data', function( data ) {
 
 				if ( timeout ) {
 					clearTimeout( timeout );
@@ -70,14 +70,14 @@ exports.Socket = class {
 			} ).on( 'error', function( err ) {
 
 				// Desttroy.
-                if ( client ) {
-                    client.destroy();
-               		client = null;
-                }
+				if ( client ) {
+					client.destroy();
+			   		client = null;
+				}
 
 				rej( err.message );
 
-            } );
+			} );
 
 		} );
 	}
@@ -87,8 +87,8 @@ exports.Socket = class {
 
 		args = args || [];
 
-		let end     = args['end'];
-		let data    = args['data'];
+		let end	 = args['end'];
+		let data	= args['data'];
 		let client  = args['client'];
 
 		var self = this;
