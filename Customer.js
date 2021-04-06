@@ -84,7 +84,7 @@ exports.Customer = class {
 
 			// Grab the offset for GMT.
 			const is_dst  = await DateTime.is_dst(); 
-			const type    = is_dst == true ? 'D' : 'S';
+			const type    = is_dst === true ? 'D' : 'S';
 			const sql     = 'select offset from TimeZoneConfig where TimeZone = ? and type = ?';
 			const binds   = [ time_abbrev, type ];
 			const fetch   = await DBISimple.fetch( { site_name: site_name, sql: sql, binds: binds, db_name: 'config' } );
